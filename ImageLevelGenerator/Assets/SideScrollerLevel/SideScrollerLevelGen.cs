@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MarioLevelGen : MonoBehaviour {
+public class SideScrollerLevelGen : MonoBehaviour {
 
     public Texture2D LevelImage;
     public Color32 groundColor, pipeColor, block1Color, block2Color, playerColor;

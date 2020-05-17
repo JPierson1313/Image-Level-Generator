@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WS3DLevelGenerator : MonoBehaviour {
+public class FPSImageLevelGenerator : MonoBehaviour {
 
     public Texture2D LevelImage;
     public Color32 floorColor, wall1Color, wall2Color, wall3Color, playerColor, doorColor, enemyColor;
@@ -71,7 +71,7 @@ public class WS3DLevelGenerator : MonoBehaviour {
                 {
                     case 1:
                         Instantiate(floorPrefab, new Vector3(x * 1, -1, y * 1), transform.rotation);
-                        Instantiate(floorPrefab, new Vector3(x * 1, 1, y * 1), transform.rotation);
+                        //Instantiate(floorPrefab, new Vector3(x * 1, 1, y * 1), transform.rotation);
                         break;
 
                     case 2:
@@ -95,7 +95,7 @@ public class WS3DLevelGenerator : MonoBehaviour {
                     case 6:
                         Instantiate(doorPrefab, new Vector3(x * 1, 0, y * 1), transform.rotation);
                         Instantiate(floorPrefab, new Vector3(x * 1, -1, y * 1), transform.rotation);
-                        Instantiate(floorPrefab, new Vector3(x * 1, 1, y * 1), transform.rotation);
+                        //Instantiate(floorPrefab, new Vector3(x * 1, 1, y * 1), transform.rotation);
                         break;
 
                     case 7:
