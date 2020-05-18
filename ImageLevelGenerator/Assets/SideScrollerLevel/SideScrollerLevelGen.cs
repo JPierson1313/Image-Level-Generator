@@ -9,6 +9,10 @@ public class SideScrollerLevelGen : MonoBehaviour {
     public GameObject groundPrefab, pipePrefab, block1Prefab, block2Prefab, playerPrefab;
     private int[,] levelData;
 
+    public Transform levelLayout;
+
+    GameObject floor;
+
     // Use this for initialization
     void Start () {
         levelData = new int[LevelImage.width, LevelImage.height];
@@ -42,6 +46,11 @@ public class SideScrollerLevelGen : MonoBehaviour {
                 {
                     levelData[x, y] = 4;
                 }
+
+                if(data.Equals(playerColor))
+                {
+                    levelData[x, y] = 5;
+                }
             }
         }
     }
@@ -55,19 +64,27 @@ public class SideScrollerLevelGen : MonoBehaviour {
                 switch (levelData[x, y])
                 {
                     case 1:
-                        Instantiate(groundPrefab, new Vector3(x, y, 0), transform.rotation);
+                        floor = Instantiate(groundPrefab, new Vector3(x, y, 0), transform.rotation);
+                        floor.transform.parent = levelLayout.transform;
                         break;
 
                     case 2:
-                        Instantiate(pipePrefab, new Vector3(x, y, 0), transform.rotation);
+                        floor = Instantiate(pipePrefab, new Vector3(x, y, 0), transform.rotation);
+                        floor.transform.parent = levelLayout.transform;
                         break;
 
                     case 3:
-                        Instantiate(block1Prefab, new Vector3(x, y, 0), transform.rotation);
+                        floor = Instantiate(block1Prefab, new Vector3(x, y, 0), transform.rotation);
+                        floor.transform.parent = levelLayout.transform;
                         break;
 
                     case 4:
-                        Instantiate(block2Prefab, new Vector3(x, y, 0), transform.rotation);
+                        floor = Instantiate(block2Prefab, new Vector3(x, y, 0), transform.rotation);
+                        floor.transform.parent = levelLayout.transform;
+                        break;
+
+                    case 5:
+                        Instantiate(playerPrefab, new Vector3(x, y, 0), transform.rotation);
                         break;
                 }
             }

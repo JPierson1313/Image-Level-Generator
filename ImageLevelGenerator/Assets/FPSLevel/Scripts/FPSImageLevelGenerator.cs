@@ -9,7 +9,7 @@ public class FPSImageLevelGenerator : MonoBehaviour {
     public GameObject floorPrefab, wall1Prefab, wall2Prefab, wall3Prefab, playerPrefab, doorPrefab, enemyPrefab;
     private int[,] levelData;
 
-    GameObject floor, ceiling, wall, door, enemy, player;
+    GameObject floor, ceiling, wall, door, enemy;
 
     public Transform levelLayout, enemies;
 
@@ -101,7 +101,7 @@ public class FPSImageLevelGenerator : MonoBehaviour {
                         break;
 
                     case 5:
-                        player = Instantiate(playerPrefab, new Vector3(x * 1, 0, y * 1), transform.rotation);
+                        Instantiate(playerPrefab, new Vector3(x * 1, 0, y * 1), transform.rotation);
                         floor = Instantiate(floorPrefab, new Vector3(x * 1, -1, y * 1), transform.rotation);
                         ceiling = Instantiate(floorPrefab, new Vector3(x * 1, 1, y * 1), transform.rotation);
 
