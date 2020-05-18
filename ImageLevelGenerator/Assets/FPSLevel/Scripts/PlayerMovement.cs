@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -46,5 +47,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             transform.Rotate(Vector3.up * RotateSpeed * Time.deltaTime);
         }
-	}
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
 }
