@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb5a867f3c533f4499ab25d1a26ffec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4672770453281182396, guid: da49b6f89ad17664fb62a2a57a81299b, type: 3}
+  player: {fileID: 0}
 --- !u!1 &882528279
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882528281}
   - component: {fileID: 882528280}
+  - component: {fileID: 882528282}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -277,6 +278,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882528282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882528279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d59e48a17a043a409bd08e82470f2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: FPSLevel
 --- !u!1 &1189415646
 GameObject:
   m_ObjectHideFlags: 0
