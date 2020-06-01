@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class DestroyBullet : MonoBehaviour {
 
-	// Update is called once per frame
-	void Update () {
-
-        Destroy(gameObject, .5f);
-	}
-
+    //Series of collisions for when the bullet hits an object with a specific tag
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Wall")
@@ -23,14 +18,6 @@ public class DestroyBullet : MonoBehaviour {
         }
 
         if (collision.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Door")
         {
             Destroy(gameObject);
         }

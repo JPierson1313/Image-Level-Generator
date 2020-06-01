@@ -65,11 +65,12 @@ public class AI : MonoBehaviour {
 		rotation = (Target.transform.position - transform.position);
         rotation.y = 0;
 
-		// slows rotation based on variable Damping 
+		//slows rotation based on variable Damping 
 		transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(rotation), Time.deltaTime * Damping);
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
     }
 
+    //When a bullet hits the AI, the AI will lose one health point
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Bullet")
