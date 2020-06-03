@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject projectile;
     public Transform weapon;
 
-    // Update is called once per frame
     void FixedUpdate ()
     {
         //When the player clicks the Left Mouse Button, they will launch a bullet prefab in front of them

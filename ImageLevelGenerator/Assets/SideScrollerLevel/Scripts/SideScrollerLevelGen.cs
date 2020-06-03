@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class SideScrollerLevelGen : MonoBehaviour {
 
-    public Texture2D LevelImage;
-    public Color32 groundColor, pipeColor, block1Color, block2Color, playerColor;
-    public GameObject groundPrefab, pipePrefab, block1Prefab, block2Prefab, playerPrefab;
-    private int[,] levelData;
+    public Texture2D LevelImage; //Texture2D is used to read the selected Image to build level
+    public Color32 groundColor, pipeColor, block1Color, block2Color, playerColor; //Color32 gives you access to RGBA (255,255,255,255)
+    public GameObject groundPrefab, pipePrefab, block1Prefab, block2Prefab, playerPrefab; //Prefabs used to build the different parts of the level
 
-    public Transform levelLayout;
+    private int[,] levelData; //[,] is used as a coorindate system for building the level
 
-    GameObject floor;
+    public Transform levelLayout; //Used to attach instantiated prefabs as a child to make the hierarchy cleaner
+
+    GameObject floor; //Applying names to each of the built prefabs
 
     // Use this for initialization
     void Start () {
+        //Getting the length and height of the image for the level
         levelData = new int[LevelImage.width, LevelImage.height];
         GenerateLevelData();
         BuildLevel();
     }
 
+    /// <summary>
+    /// This method is used to generate the level's data by setting the color of each pixel to a set number that will be used in BuildLevel();
+    /// </summary>
     void GenerateLevelData()
     {
         for (int x = 0; x < LevelImage.width; x++)
@@ -55,12 +60,19 @@ public class SideScrollerLevelGen : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// BuildLevel() is used to take each set value used for the colors into a switch function that will generate the correct prefabs needed
+    /// Once the prefabs are instantiated, they will become a child to a parent to make the hiearchy cleaner 
+    /// Example case 1 builds out the floor and the children are added to the level Layout as their parent;
+    /// </summary>
     void BuildLevel()
     {
         for (int x = 0; x < LevelImage.width; x++)
         {
             for (int y = 0; y < LevelImage.height; y++)
             {
+                //Case 1-4 builds out the level
+                //Case 5 builds the player
                 switch (levelData[x, y])
                 {
                     case 1:
